@@ -1,0 +1,15 @@
+{
+  "name": "jelou-task",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:customers": "cd customers-api && node src/server.js",
+    "dev:orders": "cd orders-api && node src/server.js",
+    "dev:orchestrator": "cd lambda-orchestrator && node handler.js",
+    "dev": "concurrently \"npm run dev:customers\" \"npm run dev:orders\" \"npm run dev:orchestrator\"",
+    "db": "docker-compose up -d"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

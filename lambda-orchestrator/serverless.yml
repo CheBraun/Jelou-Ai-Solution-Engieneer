@@ -1,0 +1,16 @@
+service: lambda-orchestrator
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+
+functions:
+  createAndConfirmOrder:
+    handler: handler.createAndConfirmOrder
+    events:
+      - http:
+          path: orchestrator/create-and-confirm-order
+          method: post
+
+plugins:
+  - serverless-offline

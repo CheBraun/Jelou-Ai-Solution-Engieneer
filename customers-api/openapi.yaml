@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Customers API
+  version: 1.0.0
+
+paths:
+  /api/customers:
+    post:
+      summary: Create customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+      responses:
+        '201':
+          description: Created
+
+  /api/customers/{id}:
+    get:
+      summary: Get customer by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK

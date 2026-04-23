@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: Orders API
+  version: 1.0.0
+
+paths:
+  /api/orders:
+    post:
+      summary: Create order
+
+  /api/orders/{id}/confirm:
+    post:
+      summary: Confirm order (idempotent)
